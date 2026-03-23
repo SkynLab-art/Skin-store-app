@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: skynlab-server
+  labels:
+    app: skynlab-server
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: skynlab-server
+  template:
+    metadata:
+      labels:
+        app: skynlab-server
+    spec:
+      containers:
+        - name: skynlab-server
+          image: skynlab-server:latest
+          ports:
+            - containerPort: 5000
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: PORT
+              value: "5000"

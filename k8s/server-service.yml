@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: skynlab-server-service
+spec:
+  selector:
+    app: skynlab-server
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP
+```
+
+---
+
+## What Each Section Means
+
+| Section | Meaning |
+|---------|---------|
+| `kind: Service` | This is a Service resource |
+| `selector` | Connects to pods with this label |
+| `port` | Port the service listens on |
+| `targetPort` | Port on the actual pod |
+| `type: ClusterIP` | Only accessible inside the cluster |
+
+---
+
+### Why ClusterIP for the Backend?
+
+The Node.js API should **not** be directly exposed to the internet. Only the React frontend talks to it — so ClusterIP keeps it **internal and secure.**
+```
+Internet → React Service → React Pod → Node.js Service → Node.js Pod
