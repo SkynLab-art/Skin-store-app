@@ -10,10 +10,11 @@
   "author": "SkynLab Art",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "prom-client": "^15.1.3"
   },
   "devDependencies": {
-    "nodemon": "^3.0.0",
-    "dotenv": "^16.0.0"
+    "dotenv": "^16.0.0",
+    "nodemon": "^3.0.0"
   }
 }
