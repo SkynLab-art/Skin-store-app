@@ -1,5 +1,3 @@
-
-
 services:
 
   # Node.js Backend
@@ -25,3 +23,25 @@ services:
       - /app/node_modules
     depends_on:
       - server
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: skynlab-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+    depends_on:
+      - server
+
+  # Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: skynlab-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=skynlab123
+    depends_on:
+      - prometheus
