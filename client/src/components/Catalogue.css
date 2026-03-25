@@ -1,0 +1,46 @@
+.catalogue {
+  padding: 5rem 4rem;
+}
+
+.catalogue-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.catalogue-tabs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.tab {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(124, 58, 237, 0.3);
+  color: #999;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  border-color: #EC4899;
+  color: #fff;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #7C3AED, #EC4899);
+  border-color: transparent;
+  color: white;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
