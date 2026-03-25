@@ -1,120 +1,91 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
+    <div>
+      {/* Navbar */}
+      <nav className="navbar">
+        <div className="logo">SkynLab Studio</div>
+        <ul className="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Phones</a></li>
+          <li><a href="#">Laptops</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+        <button className="nav-cart">🛒 Cart (0)</button>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <div className="hero-badge">✨ Premium Device Skins</div>
+          <h1>
+            Give Your Device a<br />
+            <span>Bold New Identity</span>
+          </h1>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            Custom designed skins for phones and laptops.<br />
+            Express yourself with premium quality vinyl wraps.
           </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+          <div className="hero-buttons">
+            <button className="btn-primary">Shop Now →</button>
+            <button className="btn-secondary">View Catalogue</button>
+          </div>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      {/* Categories */}
+      <section className="categories">
+        <h2 className="section-title">Shop by <span>Device</span></h2>
+        <p className="section-subtitle">Choose your device and find the perfect skin</p>
+        <div className="category-grid">
+          <div className="category-card">
+            <div className="category-icon">📱</div>
+            <h3>Phone Skins</h3>
+            <p>iPhone, Samsung, OnePlus and more</p>
+          </div>
+          <div className="category-card">
+            <div className="category-icon">💻</div>
+            <h3>Laptop Skins</h3>
+            <p>MacBook, Dell, HP and more</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="features">
+        <h2 className="section-title">Why <span>SkynLab?</span></h2>
+        <p className="section-subtitle">Built for those who refuse to blend in</p>
+        <div className="features-grid">
+          <div className="feature-card">
+            <div className="feature-icon">🎨</div>
+            <h3>Bold Designs</h3>
+            <p>Unique artwork created by independent artists from around the world</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">⚡</div>
+            <h3>Fast Delivery</h3>
+            <p>Shipped within 48 hours directly to your door anywhere in the UK</p>
+          </div>
+          <div className="feature-card">
+            <div className="feature-icon">🛡️</div>
+            <h3>Premium Quality</h3>
+            <p>Military grade vinyl that protects and looks stunning for years</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-logo">SkynLab Studio</div>
+        <p>© 2026 SkynLab Studio. All rights reserved.</p>
+        <div className="footer-links">
+          <a href="#">Instagram</a>
+          <a href="#">Privacy</a>
+          <a href="#">Contact</a>
+        </div>
+      </footer>
+    </div>
   )
 }
 
