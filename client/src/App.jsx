@@ -1,91 +1,43 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home'
+import Phones from './pages/Phones'
+import Laptops from './pages/Laptops'
+import About from './pages/About'
 
 function App() {
   return (
-    <div>
-      {/* Navbar */}
-      <nav className="navbar">
-        <div className="logo">SkynLab Studio</div>
-        <ul className="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Phones</a></li>
-          <li><a href="#">Laptops</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-        <button className="nav-cart">🛒 Cart (0)</button>
-      </nav>
+    <BrowserRouter>
+      <div>
+        <nav className="navbar">
+          <Link to="/" className="logo">SkynLab Studio</Link>
+          <ul className="nav-links">
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/phones">Phones</Link></li>
+            <li><Link to="/laptops">Laptops</Link></li>
+            <li><Link to="/about">About</Link></li>
+          </ul>
+          <button className="nav-cart">🛒 Cart (0)</button>
+        </nav>
 
-      {/* Hero Section */}
-      <section className="hero">
-        <div className="hero-content">
-          <div className="hero-badge">✨ Premium Device Skins</div>
-          <h1>
-            Give Your Device a<br />
-            <span>Bold New Identity</span>
-          </h1>
-          <p>
-            Custom designed skins for phones and laptops.<br />
-            Express yourself with premium quality vinyl wraps.
-          </p>
-          <div className="hero-buttons">
-            <button className="btn-primary">Shop Now →</button>
-            <button className="btn-secondary">View Catalogue</button>
-          </div>
-        </div>
-      </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/phones" element={<Phones />} />
+          <Route path="/laptops" element={<Laptops />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
 
-      {/* Categories */}
-      <section className="categories">
-        <h2 className="section-title">Shop by <span>Device</span></h2>
-        <p className="section-subtitle">Choose your device and find the perfect skin</p>
-        <div className="category-grid">
-          <div className="category-card">
-            <div className="category-icon">📱</div>
-            <h3>Phone Skins</h3>
-            <p>iPhone, Samsung, OnePlus and more</p>
+        <footer className="footer">
+          <div className="footer-logo">SkynLab Studio</div>
+          <p>© 2026 SkynLab Studio. All rights reserved.</p>
+          <div className="footer-links">
+            <a href="#">Instagram</a>
+            <a href="#">Privacy</a>
+            <a href="#">Contact</a>
           </div>
-          <div className="category-card">
-            <div className="category-icon">💻</div>
-            <h3>Laptop Skins</h3>
-            <p>MacBook, Dell, HP and more</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="features">
-        <h2 className="section-title">Why <span>SkynLab?</span></h2>
-        <p className="section-subtitle">Built for those who refuse to blend in</p>
-        <div className="features-grid">
-          <div className="feature-card">
-            <div className="feature-icon">🎨</div>
-            <h3>Bold Designs</h3>
-            <p>Unique artwork created by independent artists from around the world</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">⚡</div>
-            <h3>Fast Delivery</h3>
-            <p>Shipped within 48 hours directly to your door anywhere in the UK</p>
-          </div>
-          <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
-            <h3>Premium Quality</h3>
-            <p>Military grade vinyl that protects and looks stunning for years</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-logo">SkynLab Studio</div>
-        <p>© 2026 SkynLab Studio. All rights reserved.</p>
-        <div className="footer-links">
-          <a href="#">Instagram</a>
-          <a href="#">Privacy</a>
-          <a href="#">Contact</a>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </BrowserRouter>
   )
 }
 
